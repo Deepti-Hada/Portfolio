@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Premium developer portfolio template">
+<title>Project Detail — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Cal+Sans&family=Geologica:wght,CRSV@100..900,0&family=Momo+Trust+Display&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Sora:wght@100..800&family=Sulphur+Point:wght@300;400;700&family=Varela+Round&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+
+
+<body class="project-details-page">
+    <!-- ==========HEADER=========== -->
+    <header class="project-detail-header">
+        <a href="index.html#projects" class="back-projects">
+           <i class="fa-solid fa-arrow-left"></i>Back to projects
+        </a>
+        <span class="detail-brand"> DH  </span>
+    </header>
+    <!-- =======-- HERO ========= -->
+
+    <main>
+        <section class="project-detail-hero">
+            <div class="project-detail-container">
+                <div class="detail-meta">
+                    <span id="detailCategory">  </span>
+                    <span class="meta-line"></span>
+                    <span>  Case Study </span>
+                </div>
+
+                <h1 id="detailTitle">
+                    Project Title <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </h1>
+                <p class="detail-intro"  id="detailDescription"> </p>
+
+                <div class="detail-tech"  id="detailTech">   </div>
+
+                <a href="#detail-content" class="detail-scroll"> 
+                Explore project  <i class="fa-solid fa-arrow-down"></i>
+                </a>
+            </div>
+        </section>
+
+  <!-- ===========MAIN IMAGE ======== -->
+        <section class="detail-cover-section">
+            <div class="project-detail-container">
+                <div class="detail-cover">
+                    <img  id="detailCover"  src="" alt="">
+                </div>
+            </div>
+        </section>
+
+
+<!-- ============ CONTENT =========== -->
+        <section class="detail-content-section"  id="detail-content">
+            <div class="project-detail-container">
+                <div class="detail-content-grid">
+                 <!-- LEFT -->
+                    <div class="detail-content-main">
+                        <span class="detail-small-label"> About the project </span>
+                        <h2>A website designed around the business.</h2>
+                        <p id="detailLongDescription"></p>
+                        <h3>What I worked on </h3>
+                        <ul
+                            class="detail-list"
+                            id="detailFeatures">
+                        </ul>
+                    </div>
+
+
+                    <!-- RIGHT -->
+
+                    <aside class="detail-sidebar">
+
+                        <div class="detail-side-card">
+
+                            <span>
+                                Platform
+                            </span>
+
+                            <strong
+                                id="detailPlatform">
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-side-card">
+
+                            <span>
+                                Project type
+                            </span>
+
+                            <strong
+                                id="detailType">
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-side-card">
+
+                            <span>
+                                Technologies
+                            </span>
+
+                            <div
+                                class="detail-side-tech"
+                                id="detailSideTech">
+                            </div>
+
+                        </div>
+
+                    </aside>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             GALLERY
+        ================================================== -->
+
+        <section class="detail-gallery-section">
+
+            <div class="project-detail-container">
+
+                <div class="detail-gallery-heading">
+
+                    <span class="detail-small-label">
+                        Project Preview
+                    </span>
+
+                    <h2>
+                        A closer look.
+                    </h2>
+
+                </div>
+
+
+                <div
+                    class="detail-gallery-grid"
+                    id="detailGallery">
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CTA
+        ================================================== -->
+
+        <section class="detail-cta">
+
+            <div class="project-detail-container">
+
+                <div class="detail-cta-box">
+
+                    <span>
+                        Have a similar project?
+                    </span>
+
+                    <h2>
+                        Let's build something
+                        that works.
+                    </h2>
+
+                    <a
+                        href="index.html#contact"
+                        class="detail-cta-btn">
+
+                        Start a conversation
+
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         SCRIPT
+    ====================================================== -->
+<script src="script.js"></script>
+<script src="project-data.js"></script>
+    <!-- CASE STUDY SCRIPT -->
+
+    <script>
+
+        /*
+         * Get project ID from URL
+         *
+         * Example:
+         * project-details.html?id=mahak-beauty-shop
+         */
+
+        const params =
+            new URLSearchParams(
+                window.location.search
+            );
+
+
+        const projectId =
+            params.get("id");
+
+
+        /*
+         * Find project
+         */
+
+        const project =
+            projects.find(
+                item =>
+                    item.id === projectId
+            );
+
+
+        /*
+         * If project doesn't exist
+         */
+
+        if (!project) {
+
+            window.location.href =
+                "index.html#projects";
+
+        }
+
+
+        if (project) {
+
+
+            /* =========================
+               PAGE TITLE
+            ========================== */
+
+            document.title =
+                `${project.title} — Deepti Hada`;
+
+
+            /* =========================
+               BASIC INFORMATION
+            ========================== */
+
+            document.getElementById(
+                "detailCategory"
+            ).textContent =
+                project.category;
+
+
+            document.getElementById(
+                "detailTitle"
+            ).textContent =
+                project.title;
+
+
+            document.getElementById(
+                "detailDescription"
+            ).textContent =
+                project.description;
+
+
+            document.getElementById(
+                "detailCover"
+            ).src =
+                project.image;
+
+
+            document.getElementById(
+                "detailCover"
+            ).alt =
+                project.title;
+
+
+            /* =========================
+               TECHNOLOGIES
+            ========================== */
+
+            const techHTML =
+                project.tech
+                    .map(
+                        tech =>
+                            `<span>${tech}</span>`
+                    )
+                    .join("");
+
+
+            document.getElementById(
+                "detailTech"
+            ).innerHTML =
+                techHTML;
+
+
+            document.getElementById(
+                "detailSideTech"
+            ).innerHTML =
+                techHTML;
+
+
+            /* =========================
+               PLATFORM
+            ========================== */
+
+            let platform =
+                "Web Development";
+
+
+            if (
+                project.tech.includes(
+                    "WordPress"
+                )
+            ) {
+
+                platform = "WordPress";
+
+            } else if (
+                project.tech.includes(
+                    "Figma"
+                )
+            ) {
+
+                platform =  "UI / Design Concept";
+
+            }
+            
+
+
+            document.getElementById(
+                "detailPlatform"
+            ).textContent =
+                platform;
+
+
+            /* =========================
+               TYPE
+            ========================== */
+
+            document.getElementById(
+                "detailType"
+            ).textContent =
+                project.category;
+
+
+            /* =========================
+               LONG DESCRIPTION
+            ========================== */
+
+            document.getElementById(
+                "detailLongDescription"
+            ).innerHTML =
+
+                 project.longDescription;
+
+
+            /* =========================
+               FEATURES
+            ========================== */
+
+            const features = [
+
+                "Complete WooCommerce-based online store",
+
+                "Clear content structure and visual hierarchy",
+
+                "Modern and user-friendly interface",
+
+                "Performance-conscious development",
+
+                "Easy-to-manage website structure"
+
+            ];
+
+
+          document.getElementById(
+    "detailFeatures"
+).innerHTML =
+
+    project.features
+        .map(
+            feature =>
+                `<li>
+                    <span>
+                        <i class="fa-solid fa-check"></i>
+                    </span>
+                    ${feature}
+                </li>`
+        )
+        .join("");
+
+
+            /* =========================
+               GALLERY
+            ========================== */
+
+            const galleryContainer =
+                document.getElementById(
+                    "detailGallery"
+                );
+
+
+            galleryContainer.innerHTML = "";
+
+
+            if (
+                project.gallery &&
+                project.gallery.length
+            ) {
+
+                project.gallery.forEach(
+                    (image, index) => {
+
+                        const galleryItem =
+                            document.createElement(
+                                "div"
+                            );
+
+
+                        galleryItem.className =
+                            "detail-gallery-item";
+
+
+                        galleryItem.innerHTML = `
+
+                            <img
+                                src="${image}"
+                                alt="${project.title} preview ${index + 1}"
+                                loading="lazy"
+                            >
+
+                            <span>
+                                ${String(
+                                    index + 1
+                                ).padStart(2,"0")}
+                            </span>
+
+                        `;
+
+
+                        galleryContainer.appendChild(
+                            galleryItem
+                        );
+
+                    }
+                );
+
+            }
+
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
